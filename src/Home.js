@@ -1,10 +1,11 @@
 import React from 'react'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './Home.css';
 
 function Home() {
 
     function activateTest() {
-          console.log('The button was clicked.');
+          console.log('The Start Test button was clicked.');
     }
 
 
@@ -17,7 +18,11 @@ function Home() {
             <p>We are <i>NOT</i> a 100% accurate or full-proof method for diagnosis.</p>
             <p>Our goal is simply to display user's hypothetical chances of having the virus, as well as to educate the public!</p>
 
-            <button onClick={activateTest}>Start Test</button>
+            <Link to="/test">
+                <button onClick={activateTest}> Start Test </button>
+            </Link>
+            
+
         </div>
     )
 }
