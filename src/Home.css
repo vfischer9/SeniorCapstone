@@ -1,7 +1,49 @@
 .title{
-    color: black;
     display: flex;
+    color: black;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    align-items: center;
+    width: 500px;
+    border: 4px solid black;
+    border-radius: 45%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 12px;
+    background: linear-gradient(to bottom, #33ccff 0%, #3366cc 100%);
+
+}
+
+.contain{
+    margin: auto;
+    max-width: 700px;
+    background: linear-gradient(to top, #33ccff 0%, #3366cc 100%);
+    border: 4px solid black;
+    padding: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.center{
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: small;
+    color: white;
+    text-align: center;
+}
+
+.linkedInPic{
+    height: 20px;
+    width: 20px;
+}
+
+.gitHubPic{
+    height: 18px;
+    width: 18px;
 }

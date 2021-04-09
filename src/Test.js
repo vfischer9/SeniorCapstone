@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import linkedIn from '../src/images/linkedin.png'
+import gitHub from '../src/images/github.png'
 
 //highRisk = 3
 //lowRisk = 1
@@ -161,6 +163,12 @@ function Test() {
 					</div>
 				</>
 			)}
+
+			<footer>
+                © 2021 Built By Victoria Fischer.
+                <a className='ml-2' href='https://www.linkedin.com/in/vfischer9/' target="blank" ><img className='linkedInPic' src={linkedIn} alt='linkedInImage'></img></a>
+                <a className='ml-1' href='https://github.com/vfischer9' target="blank" ><img className='gitHubPic' src={gitHub} alt='gitHubImage'></img></a>
+            </footer>
         </div>
     )
 }
