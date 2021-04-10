@@ -1,5 +1,8 @@
 import React from 'react'
-
+import { Navbar, Nav } from 'react-bootstrap';
+import linkedIn from '../src/images/linkedin.png'
+import gitHub from '../src/images/github.png'
+import home from '../src/images/home.png'
 
 function Tips() {
 
@@ -20,7 +23,15 @@ function Tips() {
 
 
     return (
+        
         <article className='tipsPage'>
+            <Navbar className='navbar' variant="dark">
+                <Nav className="mr-auto">
+                    <Nav.Link href="/"><img className='homeIcon' src={home} href='homePic'></img></Nav.Link>
+                </Nav>
+            </Navbar>
+
+            <br></br>
 
             <h4>Choose from the following categories</h4>
             
