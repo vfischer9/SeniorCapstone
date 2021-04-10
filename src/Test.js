@@ -4,6 +4,9 @@ import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import linkedIn from '../src/images/linkedin.png'
 import gitHub from '../src/images/github.png'
+import test from '../src/images/test.png'
+import home from '../src/images/home.png'
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 //highRisk = 3
 //lowRisk = 1
@@ -106,11 +109,16 @@ function Test() {
 		},
 	];
 
+	function goToTips() {
+		console.log('The View Tips button was clicked.');
+  }
+
     const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 
 	const handleAnswerOptionClick = (highRisk, lowRisk) => {
+		
 		if (highRisk) {
 			setScore(score + 3);
 		}
@@ -126,50 +134,75 @@ function Test() {
 		}
 	};
 
-    const getAvg = (score) => {
-        var avg = (score/23) * 100;
+
+    const getAvg = (userScore) => {
+        var avg = ((userScore/23) * 100);
+		console.log(avg);
         return avg;
 	};
+
+	const getRisk = (userAverage) => {
+		userAverage = ((score/23) * 100);
+		if (userAverage > 0 && userAverage < 40){
+			return 'Low Risk';
+		}
+		else if (userAverage > 39 && userAverage < 60){
+			return 'Moderate Risk';
+		}
+		else if(userAverage > 59){
+			return 'High Risk';
+		}
+	}
     
     return (
         <div>
             
-             <Navbar  bg="dark" variant="dark">
+             <Navbar className='navbar' variant="dark">
                 <Nav className="mr-auto">
-                    <Nav.Link href="/">Return Home</Nav.Link>
+                    <Nav.Link href="/"><img className='homeIcon' src={home}></img></Nav.Link>
                 </Nav>
             </Navbar>
             <br></br>
-            <h3 style={{ color: 'white' }} className='ml-2'>Begin Your Test By Answering The Following Questions</h3>
+            <h3 className='questionTitle'>
+				<img className='testIcon' src = {test} alt='testImage'></img>
+				Begin Your Test By Answering The Following Questions
+			</h3>
             <br></br>
 
-
-            {showScore ? (
-				<div className='ml-2'>
-					You scored {score} out of 23, which is {getAvg(score)}%.
-				</div>
-			) : (
-				<>
+			<div  className='questionContainer'>
+				{showScore ? (
 					<div className='ml-2'>
-						<div className='mb-4'>
-							<span>Question {currentQuestion + 1}</span>/{questions.length}
+						You scored {score} out of 23, which is {getAvg(score)}%. 
+						This puts you in the '{getRisk(score)}' category. 
+						Click below to view some of our tips to stay healthy. 
+						<br></br>
+						<Link to="/tips">
+                        	<button className='mt-2' onClick={goToTips}> View Our Tips </button>
+                    	</Link>
+					</div>
+				) : (
+					<>
+						<div className='ml-2'>
+							<div className='mb-4'>
+							<u><b><span>Question {currentQuestion + 1}</span>/{questions.length}</b></u>
+							</div>
+							<div className='question-text'>{questions[currentQuestion].questionText}</div>
 						</div>
-						<div className='question-text'>{questions[currentQuestion].questionText}</div>
-					</div>
-					<div className='ml-2 mt-2 answer-section'>
-						{questions[currentQuestion].answerOptions.map((answerOption) => (
-							<button onClick={() => handleAnswerOptionClick(answerOption.highRisk, answerOption.lowRisk)}>{answerOption.answerText}</button>
-						))}
-					</div>
-				</>
-			)}
+						<div className='ml-2 mt-2 answer-section'>
+							{questions[currentQuestion].answerOptions.map((answerOption) => (
+								<button className='yesOrNo' onClick={() => handleAnswerOptionClick(answerOption.highRisk, answerOption.lowRisk)}>{answerOption.answerText}</button>
+							))}
+						</div>
+					</>
+				)}
 
-			<footer>
-                © 2021 Built By Victoria Fischer.
-                <a className='ml-2' href='https://www.linkedin.com/in/vfischer9/' target="blank" ><img className='linkedInPic' src={linkedIn} alt='linkedInImage'></img></a>
-                <a className='ml-1' href='https://github.com/vfischer9' target="blank" ><img className='gitHubPic' src={gitHub} alt='gitHubImage'></img></a>
-            </footer>
-        </div>
+				<footer>
+					© 2021 Built By Victoria Fischer.
+					<a className='ml-2' href='https://www.linkedin.com/in/vfischer9/' target="blank" ><img className='linkedInPic' src={linkedIn} alt='linkedInImage'></img></a>
+					<a className='ml-1' href='https://github.com/vfischer9' target="blank" ><img className='gitHubPic' src={gitHub} alt='gitHubImage'></img></a>
+				</footer>
+			</div>
+		</div>
     )
 }
 

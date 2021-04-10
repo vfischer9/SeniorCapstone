@@ -1,8 +1,10 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './Home.css';
+import { Navbar, Nav } from 'react-bootstrap';
 import linkedIn from '../src/images/linkedin.png'
 import gitHub from '../src/images/github.png'
+import info from '../src/images/info.png'
 
 function Home() {
 
@@ -13,14 +15,19 @@ function Home() {
 
     return (
         <div>
+            <Navbar className='navbar' variant="dark">
+                <Nav className="mr-auto">
+                    <Nav.Link href="/tips"><img className='infoPic' src={info} href='infoPic'></img></Nav.Link>
+                </Nav>
+            </Navbar>
+            <br></br>
             <h1 className='title'>Covid-19 Test</h1>
             <div className='contain mt-4'>
                 <br></br>
                 <p>Want to check your chances of having contracted COVID-19?</p>
                 <p>Take our online test! </p>
-                <p>We are <i>NOT</i> a 100% accurate or full-proof method for diagnosis.</p>
-                <p>Our goal is simply to display user's hypothetical chances of having the virus, as well as to educate the public!</p>
-                
+                <p>**DISCLAIMER: We are <i>NOT</i> a 100% accurate or full-proof method for diagnosis. Our goal is simply to display user's hypothetical chances of having the virus, as well as to educate the public! It is in <i>NO WAY</i> meant to be a means of diagnosis. If you think you have COVID-19, consult a medical professional right away. </p>
+
                 <div className='center'>
                     <Link to="/test">
                         <button onClick={activateTest}> Start Test </button>

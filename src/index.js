@@ -4,6 +4,7 @@ import React from "react";
 
    import Home from "./Home";
    import Test from "./Test";
+   import Tips from './Tips';
 
     const rootElement = document.getElementById("root");
     ReactDOM.render(
@@ -11,9 +12,11 @@ import React from "react";
        <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/test" component={Test} />
+        <Route path="/tips" component={Tips} />
       </Switch>
       </BrowserRouter>,
       rootElement
+      
     );
 
 // If you want to start measuring performance in your app, pass a function
