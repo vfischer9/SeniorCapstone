@@ -1,5 +1,5 @@
-body{
-    background-image: url('./images/ombre.png');
+html, body {
+    height: 100%;
 }
 
 button{

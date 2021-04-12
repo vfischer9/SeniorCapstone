@@ -5,6 +5,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 import linkedIn from '../src/images/linkedin.png'
 import gitHub from '../src/images/github.png'
 import info from '../src/images/info.png'
+import corgi from '../src/images/corgi.gif'
 
 function Home() {
 
@@ -14,14 +15,16 @@ function Home() {
 
 
     return (
-        <div>
+        <div className='homePage'>
             <Navbar className='navbar' variant="dark">
                 <Nav className="mr-auto">
                     <Nav.Link href="/tips"><img className='infoPic' src={info} href='infoPic'></img></Nav.Link>
                 </Nav>
             </Navbar>
             <br></br>
-            <h1 className='title'>Covid-19 Test</h1>
+            
+            <h1 className='title'>Covid-19 Test<img src={corgi} alt='corgiGif' className='corgiGif'></img></h1>
+            
             <div className='contain mt-4'>
                 <br></br>
                 <p>Want to check your chances of having contracted COVID-19?</p>
@@ -34,7 +37,6 @@ function Home() {
                     </Link>
                 </div>
             </div>
-
             <footer>
                 © 2021 Built By Victoria Fischer.
                 <a className='ml-2' href='https://www.linkedin.com/in/vfischer9/' target="blank" ><img className='linkedInPic' src={linkedIn} alt='linkedInImage'></img></a>

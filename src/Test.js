@@ -107,6 +107,20 @@ function Test() {
 				{ answerText: 'No', noRisk: true },
 			],
 		},
+		{
+			questionText: 'Are you over the age of 65?',
+			answerOptions: [
+				{ answerText: 'Yes', highRisk: true, lowRisk: false },
+				{ answerText: 'No', noRisk: true },
+			],
+		},
+		{
+			questionText: 'Have you recently been in a crowd of more than 10 people?',
+			answerOptions: [
+				{ answerText: 'Yes', lowRisk: true, highRisk: false },
+				{ answerText: 'No', noRisk: true },
+			],
+		},
 	];
 
 	function goToTips() {
@@ -136,13 +150,14 @@ function Test() {
 
 
     const getAvg = (userScore) => {
-        var avg = ((userScore/23) * 100);
+        var avg = ((userScore/27) * 100);
 		console.log(avg);
+		avg = avg.toFixed(2);
         return avg;
 	};
 
 	const getRisk = (userAverage) => {
-		userAverage = ((score/23) * 100);
+		userAverage = ((score/27) * 100);
 		if (userAverage > 0 && userAverage < 40){
 			return 'Low Risk';
 		}
@@ -155,7 +170,7 @@ function Test() {
 	}
     
     return (
-        <div>
+        <div className='testPage'>
             
              <Navbar className='navbar' variant="dark">
                 <Nav className="mr-auto">
@@ -169,10 +184,10 @@ function Test() {
 			</h3>
             <br></br>
 
-			<div  className='questionContainer'>
+			<div className='questionContainer'>
 				{showScore ? (
 					<div className='ml-2'>
-						You scored {score} out of 23, which is {getAvg(score)}%. 
+						You scored {score} out of 27, which is {getAvg(score)}%. 
 						This puts you in the '{getRisk(score)}' category. 
 						Click below to view some of our tips to stay healthy. 
 						<br></br>

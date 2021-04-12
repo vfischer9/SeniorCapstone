@@ -1,3 +1,14 @@
+
+.homePage{
+    height: 750px;
+    background: linear-gradient(to bottom, #ffccff 0%, #ff66cc 100%);
+}
+
+.testPage{
+    height: 750px;
+    background: linear-gradient(to bottom, #99ccff 0%, #9966ff 100%);
+}
+
 .title{
     display: flex;
     color: black;
@@ -18,7 +29,6 @@
     margin: auto;
     max-width: 700px;
     background: linear-gradient(to top, #ffffff 14%, #c0c0c0 100%);
-
     border: 4px solid black;
     padding: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -55,7 +65,7 @@ footer {
     text-align: center;
     border: 4px solid black;
     padding: 20px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
 }
 
 .yesOrNo{
@@ -99,4 +109,113 @@ footer {
 
 .tipsPage{
     background: linear-gradient(to top, #33ccff 0%, #99ccff 100%);
+}
+
+.tips{
+    margin-left: 26px;
+}
+
+.list{
+    width: 30%;
+    border-radius: 10%;
+    padding: 30px;
+    background: aliceblue;
+    border: 2px black solid;
+    font-size: 12px;
+}
+
+.lowSection{
+    margin: auto;
+    border-radius: 8%;
+    padding: 30px;
+    background-color: aliceblue;
+}
+
+#lowRisk{
+    margin-left: 60px;
+}
+
+#moderateRisk{
+    margin-left: 60px;
+}
+
+.modSection{
+    margin: auto;
+    border-radius: 8%;
+    padding: 30px;
+    background-color: aliceblue;
+}
+
+#highRisk{
+    margin-left: 60px;
+}
+
+.highSection{
+    margin: auto;
+    border-radius: 6%;
+    padding: 30px;
+    background-color: aliceblue;
+}
+
+.scrollTo{
+    margin-right: 20px;
+}
+
+.buttonsScroll{
+    text-align: center;
+}
+
+.categories{
+    text-align: center;
+}
+
+.healthImage{
+    opacity: 0.2;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.heroImage{
+    margin-top: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.socialDistImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.corgiGif{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: absolute;
+    margin-left: 310px;
+}
+
+.maskPic{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+.pandaImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 600px;
+}
+
+footer{
+    background-color: rgb(255, 255, 255);
+    color: black;
 }
