@@ -23,7 +23,7 @@ function Home() {
             </Navbar>
             <br></br>
             
-            <h1 className='title'>Covid-19 Test<img src={corgi} alt='corgiGif' className='corgiGif'></img></h1>
+            <h1 className='title'>Covid-19 Virtual Test<img src={corgi} alt='corgiGif' className='corgiGif'></img></h1>
             <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
             <div className='contain mt-4'>
                 <br></br>
