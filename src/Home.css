@@ -1,12 +1,7 @@
-
-.homePage{
-    height: 750px;
+body{
+    height: 100%;
+    overflow: auto;
     background: linear-gradient(to bottom, #ffccff 0%, #ff66cc 100%);
-}
-
-.testPage{
-    height: 750px;
-    background: linear-gradient(to bottom, #99ccff 0%, #9966ff 100%);
 }
 
 .title{
@@ -218,4 +213,70 @@ footer {
 footer{
     background-color: rgb(255, 255, 255);
     color: black;
+}
+
+/* responsive, form small screens, use 13px font size */
+@media (max-width: 1024px) {
+    .title {
+        width: 50%;
+    }
+    .contain{
+        width: 50%;
+        font-size: larger;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        width: 50%;
+    }
+    .corgiGif{
+        margin-left: 250px;
+    }
+    .contain{
+        width: 50%;
+    }
+}
+
+@media (max-width: 540px) {
+    .title {
+        margin-right: 400px;
+        width: 55%;
+        margin-left: 100px;
+    }
+    .corgiGif{
+        margin-left: 200px;
+    }
+    .contain{
+        width: 60%;
+        margin-left: 130px
+    }
+}
+
+@media (max-width: 280px) {
+    .title {
+        margin-right: 400px;
+        width: 60%;
+        margin-left: 5px;
+    }
+    .corgiGif{
+        margin-left: 150px;
+    }
+    .contain{
+        margin-left: 35px;
+        width: 80%;        
+    }
+}
+
+@media (max-width: 375px) {
+    .title {
+        width: 50%;
+    }
+    .corgiGif{
+        margin-left: 150px;
+    }
+    .contain{
+        width: 80%;
+        margin-left: 40px;        
+    }
 }
