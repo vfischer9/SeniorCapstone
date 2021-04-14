@@ -22,6 +22,7 @@ function Test() {
 				{ answerText: 'Yes', highRisk: true, lowRisk: false },
                 { answerText: 'No', noRisk: true},
 			],
+			questionValue: 3,
 		},
 		{
 			questionText: 'Have you experienced fever or chills?',
@@ -29,6 +30,7 @@ function Test() {
 				{ answerText: 'Yes', lowRisk: true, highRisk: false },
                 { answerText: 'No', noRisk: true},
 			],
+			questionValue: 1,
 		},
 		{
 			questionText: 'Have you been exposed to someone with COVID-19 in the last two weeks?',
@@ -36,6 +38,8 @@ function Test() {
 				{ answerText: 'Yes', highRisk: true, lowRisk: false },
                 { answerText: 'No', noRisk: true },
 			],
+			questionValue: 3,
+			
 		},
 		{
 			questionText: 'Have you been experiencing a sore throat?',
@@ -43,6 +47,7 @@ function Test() {
 				{ answerText: 'Yes', lowRisk: true, highRisk: false },
                 { answerText: 'No', noRisk: true },
 			],
+			questionValue: 1,
 		},
         {
 			questionText: 'Do you have a cough?',
@@ -50,6 +55,7 @@ function Test() {
 				{ answerText: 'Yes', lowRisk: true, highRisk: false },
                 { answerText: 'No', noRisk: true },
 			],
+			questionValue: 1,
 		},
         {
 			questionText: 'Have you shortness of breath and/or difficulty breathing?',
@@ -57,6 +63,7 @@ function Test() {
 				{ answerText: 'Yes', highRisk: true, lowRisk: false },
                 { answerText: 'No', noRisk: true },
 			],
+			questionValue: 3,
 		},
         {
 			questionText: 'Have you been experiencing fatigue?',
@@ -64,6 +71,7 @@ function Test() {
 				{ answerText: 'Yes', lowRisk: true, highRisk: false },
                 { answerText: 'No', noRisk: true },
 			],
+			questionValue: 1,
 		},
         {
 			questionText: 'Do you have muscle or body aches?',
@@ -71,6 +79,7 @@ function Test() {
 				{ answerText: 'Yes', lowRisk: true, highRisk: false },
                 { answerText: 'No', noRisk: true },
 			],
+			questionValue: 1,
 		},
         {
 			questionText: 'Do you experience head pain?',
@@ -78,6 +87,7 @@ function Test() {
 				{ answerText: 'Yes', lowRisk: true, highRisk: false },
                 { answerText: 'No', noRisk: true },
 			],
+			questionValue: 1,
 		},
         {
 			questionText: 'have you had a runny nose or experienced congestion?',
@@ -85,6 +95,7 @@ function Test() {
 				{ answerText: 'Yes', lowRisk: true, highRisk: false },
 				{ answerText: 'No', noRisk: true },
 			],
+			questionValue: 1,
 		},
         {
 			questionText: 'Do you have nausea and/or have experienced vomiting?',
@@ -92,6 +103,7 @@ function Test() {
 				{ answerText: 'Yes', lowRisk: true, highRisk: false },
 				{ answerText: 'No', noRisk: true },
 			],
+			questionValue: 1,
 		},
         {
 			questionText: 'Have you had pain or pressure in the chest area?',
@@ -99,6 +111,7 @@ function Test() {
 				{ answerText: 'Yes', highRisk: true, lowRisk: false },
 				{ answerText: 'No', noRisk: true },
 			],
+			questionValue: 3,
 		},
         {
 			questionText: 'Have you suddenly been experiencing new spouts of confusion?',
@@ -106,6 +119,7 @@ function Test() {
 				{ answerText: 'Yes', highRisk: true, lowRisk: false },
 				{ answerText: 'No', noRisk: true },
 			],
+			questionValue: 3,
 		},
 		{
 			questionText: 'Are you over the age of 65?',
@@ -113,6 +127,7 @@ function Test() {
 				{ answerText: 'Yes', highRisk: true, lowRisk: false },
 				{ answerText: 'No', noRisk: true },
 			],
+			questionValue: 3,
 		},
 		{
 			questionText: 'Have you recently been in a crowd of more than 10 people?',
@@ -120,8 +135,18 @@ function Test() {
 				{ answerText: 'Yes', lowRisk: true, highRisk: false },
 				{ answerText: 'No', noRisk: true },
 			],
+			questionValue: 1,
 		},
 	];
+
+	function getQuestionValues(){
+		const result = questions.reduce(function(a, cv){
+			 const accumulator = a + parseInt(cv.questionValue, 10);
+			 return accumulator;
+		}, 0)
+		console.log(result);
+		return result;
+	}
 
 	function goToTips() {
 		console.log('The View Tips button was clicked.');
@@ -187,7 +212,7 @@ function Test() {
 			<div className='questionContainer'>
 				{showScore ? (
 					<div className='ml-2'>
-						You scored {score} out of 27, which is {getAvg(score)}%. 
+						You scored {score} out of {getQuestionValues()}, which is {getAvg(score)}%. 
 						This puts you in the '{getRisk(score)}' category. 
 						Click below to view some of our tips to stay healthy. 
 						<br></br>
